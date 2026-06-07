@@ -6,11 +6,11 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    background-color: #FFFFFF;
 }
 
 header {
-    background: #000;
+    background: #FFFFFF;
     color: white;
     text-align: center;
     padding: 20px;
@@ -64,7 +64,7 @@ header {
 }
 
 .product p {
-    color: green;
+    color: maroon;
     font-weight: bold;
 }
 
@@ -76,7 +76,7 @@ header {
 }
 
 footer {
-    background: black;
+    background: maroon;
     color: white;
     text-align: center;
     padding: 15px;
