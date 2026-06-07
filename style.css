@@ -1,202 +1,240 @@
-:root{
-    --maroon:#5b0f22;
-    --gold:#caa05c;
-    --light-gold:#e6d2a7;
-    --white:#ffffff;
-    --soft:#faf8f7;
-    --text:#3d3d3d;
+$maroon: #6B1020;
+$gold: #C9A227;
+$white: #ffffff;
+$text: #222222;
+$light: #f8f8f8;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+body {
+  font-family: 'Poppins', sans-serif;
+  background: $white;
+  color: $text;
 }
 
-body{
-    background:white;
-    color:var(--text);
-    font-family:'Montserrat', sans-serif;
+.navbar {
+  height: 85px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8%;
+  background: white;
+  box-shadow: 0 5px 20px rgba(0,0,0,.05);
 }
 
-/* HEADER */
-
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
-    background:white;
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:1000;
-    border-bottom:1px solid rgba(202,160,92,.2);
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: $maroon;
+  letter-spacing: 2px;
 }
 
-.logo img{
-    height:90px;
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+
+  a {
+    text-decoration: none;
+    color: $text;
+    transition: .3s;
+  }
+
+  a:hover {
+    color: $gold;
+  }
 }
 
-nav{
-    display:flex;
-    gap:35px;
+.nav-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 1.2rem;
 }
 
-nav a{
-    text-decoration:none;
-    color:var(--maroon);
-    font-weight:500;
-    transition:.3s;
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  background:
+  linear-gradient(
+  135deg,
+  #ffffff 0%,
+  #fffaf1 100%
+  );
 }
 
-nav a:hover{
-    color:var(--gold);
+.hero-content {
+  max-width: 600px;
 }
 
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-
-    background:
-    linear-gradient(rgba(255,255,255,.92),
-    rgba(255,255,255,.92)),
-    url('https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=1600');
-
-    background-size:cover;
-    background-position:center;
+.tag {
+  background: rgba(201,162,39,.15);
+  color: $gold;
+  padding: 10px 20px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
-.hero-content{
-    max-width:800px;
-    padding:30px;
+.hero h1 {
+  font-size: 4rem;
+  font-family: 'Cormorant Garamond', serif;
+  color: $maroon;
+  line-height: 1.1;
 }
 
-.hero h1{
-    font-family:'Cormorant Garamond', serif;
-    color:var(--maroon);
-    font-size:5rem;
-    margin-bottom:20px;
+.hero p {
+  margin: 25px 0;
+  line-height: 1.8;
+  color: #555;
 }
 
-.hero p{
-    font-size:1.1rem;
-    line-height:1.8;
-    margin-bottom:35px;
+.hero-buttons {
+  display: flex;
+  gap: 15px;
 }
 
-.btn{
-    display:inline-block;
-    padding:15px 40px;
-    background:var(--maroon);
-    color:white;
-    text-decoration:none;
-    border-radius:40px;
-    transition:.4s;
+.btn-primary {
+  background: $maroon;
+  color: white;
+  text-decoration: none;
+  padding: 14px 35px;
+  border-radius: 40px;
+  transition: .3s;
 }
 
-.btn:hover{
-    background:var(--gold);
-    transform:translateY(-4px);
+.btn-primary:hover {
+  background: $gold;
 }
 
-/* FEATURED */
-
-.featured{
-    padding:100px 8%;
-    background:var(--soft);
+.btn-secondary {
+  border: 1px solid $gold;
+  color: $gold;
+  text-decoration: none;
+  padding: 14px 35px;
+  border-radius: 40px;
 }
 
-.featured h2{
-    text-align:center;
-    color:var(--maroon);
-    font-size:3rem;
-    font-family:'Cormorant Garamond', serif;
-    margin-bottom:60px;
+.hero-image img {
+  width: 520px;
 }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: $maroon;
+    font-size: 3rem;
+  }
 }
 
-.card{
-    background:white;
-    padding:40px;
-    border-radius:20px;
-    border:1px solid rgba(202,160,92,.3);
-    transition:.4s;
+.categories,
+.featured {
+  padding: 100px 8%;
 }
 
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 25px;
 }
 
-.card h3{
-    color:var(--maroon);
-    margin-bottom:15px;
+.category-card {
+  height: 180px;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid rgba(201,162,39,.2);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: .4s;
+  cursor: pointer;
 }
 
-/* ABOUT */
+.category-card:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(
+  135deg,
+  $maroon,
+  #8d1630
+  );
 
-.about{
-    padding:100px 8%;
+  h3 {
+    color: white;
+  }
 }
 
-.about-box{
-    max-width:900px;
-    margin:auto;
-    text-align:center;
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 30px;
 }
 
-.about h2{
-    color:var(--maroon);
-    font-size:3rem;
-    margin-bottom:25px;
-    font-family:'Cormorant Garamond', serif;
+.product-card {
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+
+  transition: .4s;
 }
 
-.about p{
-    line-height:2;
+.product-card:hover {
+  transform: translateY(-10px);
 }
 
-/* FOOTER */
-
-footer{
-    background:var(--maroon);
-    color:white;
-    text-align:center;
-    padding:50px 20px;
+.product-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
 }
 
-footer h3{
-    color:var(--gold);
-    letter-spacing:4px;
-    margin-bottom:10px;
+.product-card h4,
+.product-card p {
+  padding: 10px 20px;
 }
 
-/* MOBILE */
+.luxury-banner {
+  padding: 120px 8%;
+  text-align: center;
 
-@media(max-width:768px){
+  background: linear-gradient(
+  135deg,
+  $maroon,
+  #3d0812
+  );
+}
 
-    header{
-        flex-direction:column;
-        gap:15px;
-    }
+.banner-content h2 {
+  color: white;
+  font-size: 3rem;
+  font-family: 'Cormorant Garamond', serif;
+}
 
-    nav{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
+.banner-content p {
+  color: rgba(255,255,255,.8);
+  margin: 20px auto;
+  max-width: 600px;
+}
 
-    .hero h1{
-        font-size:3rem;
-    }
+footer {
+  background: #fafafa;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+footer h3 {
+  color: $maroon;
+  margin-bottom: 10px;
     }
